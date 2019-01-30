@@ -1,0 +1,154 @@
+
+body{
+margin:0;
+background-image:url('images/img.svg');
+background-size:100%;
+}
+
+.tag {
+    border: 2px solid white;
+    position: absolute;
+    padding: 10px 60px;
+    top: 90px;
+    left: -80px;
+    background: black;
+    color: white;
+    box-shadow: 0px 5px 5px black;
+    transform-origin: 50% 50%;
+    transform: rotate(-45deg);
+}
+.tag a {
+    text-decoration: none;
+    color: white;
+}
+.wrapper {
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.cover {
+    width: 450px;
+    height: 600px;
+    background: #86BBD5;
+    position: absolute;
+    right: 4;
+    top: 0;
+    border-left: 7px dotted white;
+    transform-origin: 0% 50%;
+    transform: rotateY(10deg);
+    transition: all 1.5s,background 2s,z-index 2s step-end;
+    perspective: 0px;
+	z-index:1;
+}
+.cover:before {
+    content: '';
+    font-family: Arial;
+    color: white;
+    font-size: 70px;
+    position: relative;
+    top: 8%;
+    left: 15%;
+    transition: opacity 0.75s;
+    opacity: 1;
+}
+.first-page,.second-page,.third-page {
+    width: 464px;
+    height: 600px;
+    background: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotateY(10deg);
+    transform-origin: 0% 50%;
+    transition: transform 2s,z-index 2s step-end;
+    perspective: 0px;
+    box-shadow: inset 10px 0px 40px -20px black;
+    border: 1px solid #cccccc;
+    border-left: none;
+	z-index:1;
+}
+.svgContainer{
+width: 464px;
+height: 600px;
+position: absolute;
+right: 0;
+top: 0;
+z-index:2;
+}
+.third-page {
+    box-shadow: 10px 5px 10px 0px #C5C5C5;
+}
+
+.info {
+    width: 1000px;
+    margin: auto;
+    display: block;
+    text-align: center;
+    position: relative;
+    top: 40px;
+    font-size: 25px;
+    color:#173957;
+	font-family:Arial;
+}
+
+.turn{
+width:450px;
+height:600px;
+background:transparent;
+position:absolute;
+right:0;
+top:0;
+border:none;
+z-index:999;
+}
+
+#turn_btn_forward{
+right:0;
+}
+
+#turn_btn_back{
+left:0;
+width:450px;
+height:600px;
+background:transparent;
+position:absolute;
+left:0;
+top:0;
+border:none;
+z-index:999
+}
+
+.turn-forward{
+transform:rotateY(-180deg) perspective(800px);
+z-index:0;
+}
+.turn-backward{
+transition:all 2s,z-index 2s step-start;
+}
+.cover.turn-forward{
+z-index:-1;
+}
+.stopAnim{
+transition:none;
+}
+.hiddenElem{
+visibility:hidden;
+}
+.drawPath{
+transition:none;
+}
+.drawPath.animate{
+transition:stroke-dashoffset 1s ease-in-out;
+}
+.turn.disable{
+display:none;
+}
+
+#control{
+    visibility: hidden;
+}
